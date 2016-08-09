@@ -1,7 +1,7 @@
 # coding: utf-8
 import unittest
 
-from google import h5m5
+from scieloh5m5 import h5m5
 
 
 class H5M5Test(unittest.TestCase):
