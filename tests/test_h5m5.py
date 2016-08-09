@@ -11,6 +11,11 @@ class H5M5Test(unittest.TestCase):
         result = h5m5.get('0103-3352')
 
         expected = {
+            u'2016': {
+                'h5': u'12',
+                'm5': u'17',
+                'url': u'http://scholar.google.com/citations?view_op=list_hcore&venue=Q_f-804K9OAJ.2016&hl=en'
+            },
             u'2015': {
                 'm5': u'16',
                 'url': u'http://scholar.google.com/citations?view_op=list_hcore&venue=EqPlmpMQjygJ.2015&hl=pt-BR',
@@ -28,6 +33,7 @@ class H5M5Test(unittest.TestCase):
             }
         }
 
+        self.maxDiff = None
         self.assertEqual(expected, result)
 
     def test_load_issn_year(self):

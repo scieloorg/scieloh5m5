@@ -7,7 +7,7 @@ tests_require = []
 
 setup(
     name="scieloh5m5",
-    version="1.0.3",
+    version="1.0.4",
     description="Library to delivery H5 M5 Google Scholar metrics for the SciELO Journals",
     author="SciELO",
     author_email="scielo-dev@googlegroups.com",
