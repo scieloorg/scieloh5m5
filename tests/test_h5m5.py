@@ -8,7 +8,7 @@ class H5M5Test(unittest.TestCase):
 
     def test_load_issn(self):
 
-        result = h5m5.get('0103-3352')
+        result = h5m5.get_metrics('0103-3352')
 
         expected = {
             u'2016': {
@@ -38,7 +38,7 @@ class H5M5Test(unittest.TestCase):
 
     def test_load_issn_year(self):
 
-        result = h5m5.get('0103-3352', '2015')
+        result = h5m5.get_metrics('0103-3352', '2015')
 
         expected = {
             'h5': u'10',
@@ -50,7 +50,7 @@ class H5M5Test(unittest.TestCase):
 
     def test_load_issn_year_not_available_year(self):
 
-        result = h5m5.get('0103-3352', 'XXXX')
+        result = h5m5.get_metrics('0103-3352', 'XXXX')
 
         expected = None
 
@@ -58,7 +58,7 @@ class H5M5Test(unittest.TestCase):
 
     def test_load_issn_year_not_available_issn(self):
 
-        result = h5m5.get('0103-XXXX')
+        result = h5m5.get_metrics('0103-XXXX')
 
         expected = None
 
