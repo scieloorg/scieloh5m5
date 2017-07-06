@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 _CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 JOURNALS = {}
 
-CURRENT_METRICS = '2016'
+CURRENT_METRICS = '2017'
 
 with open(_CURRENT_DIR + '/data/google_metrics_h5m5.csv', 'r') as metrics:
     spamreader = csv.reader(metrics, delimiter=',', quotechar='"')
@@ -23,7 +23,8 @@ with open(_CURRENT_DIR + '/data/google_metrics_h5m5.csv', 'r') as metrics:
         JOURNALS[issn][year] = {
             'h5': h5,
             'm5': m5,
-            'url': url
+            'url': url,
+            'year': year
         }
 
 
