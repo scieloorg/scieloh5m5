@@ -8,7 +8,7 @@ logger = logging.getLogger(__name__)
 _CURRENT_DIR = os.path.abspath(os.path.dirname(__file__))
 JOURNALS = {}
 
-CURRENT_METRICS = '2017'
+CURRENT_METRICS = '2020'
 
 with open(_CURRENT_DIR + '/data/google_metrics_h5m5.csv', 'r') as metrics:
     spamreader = csv.reader(metrics, delimiter=',', quotechar='"')
@@ -44,7 +44,7 @@ def get_metrics(issn, year=None):
 
 def get_current_metrics(issn):
     """
-        This method will retrive the current H5M5 metric. It means the last year
+        This method will retrieve the current H5M5 metric. It means the last year
         the H5M5 indicators were produced by Google Scholar.
         issn: journal issn
     """
