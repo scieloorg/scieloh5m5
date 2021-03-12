@@ -11,6 +11,12 @@ class H5M5Test(unittest.TestCase):
         result = h5m5.get_metrics('0103-3352')
 
         expected = {
+            u'2020': {
+                'h5': '15',
+                'm5': '22',
+                'url': 'https://scholar.google.com/citations?view_op=list_hcore&venue=7e-4gBNaGSMJ.2020&hl=pt-BR',
+                'year': '2020'
+            },
             u'2017': {
                 'h5': '13',
                 'm5': '18',
