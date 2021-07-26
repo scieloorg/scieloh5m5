@@ -7,13 +7,13 @@ tests_require = []
 
 setup(
     name="scieloh5m5",
-    version="1.10.4",
+    version="1.9.6",
     description="Library to delivery H5 M5 Google Scholar metrics for the SciELO Journals",
     author="SciELO",
     author_email="scielo-dev@googlegroups.com",
-    maintainer="Fabio Batalha",
-    maintainer_email="fabio.batalha@scielo.org",
-    url="http://github.com/scieloorg/processing",
+    maintainer="SciELO Devs",
+    maintainer_email="scielo-dev@googlegroups.com",
+    url="http://github.com/scieloorg/scieloh5m5",
     packages=find_packages(),
     include_package_data=True,
     classifiers=[
