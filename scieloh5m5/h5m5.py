@@ -26,6 +26,8 @@ with open(_CURRENT_DIR + '/data/google_metrics_h5m5.csv', 'r') as metrics:
             'url': url,
             'year': year
         }
+        if CURRENT_METRICS < year:
+            CURRENT_METRICS = year
 
 
 def get_metrics(issn, year=None):

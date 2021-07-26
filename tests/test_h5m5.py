@@ -86,3 +86,6 @@ class H5M5Test(unittest.TestCase):
         expected = None
 
         self.assertEqual(expected, result)
+
+    def test_current_year(self):
+        self.assertEqual('2021', h5m5.CURRENT_METRICS)
