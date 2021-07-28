@@ -23,7 +23,7 @@ def get_data(file_path):
 def get_rows(input_file_paths):
     for file_path in input_file_paths:
         for row in get_data(file_path):
-            yield ",".join(list(row.values()))
+            yield ",".join(['"{}"'.format(v) for v in row.values()])
 
 
 def write_journal_url(output_folder_path, input_folder_path):
@@ -55,7 +55,7 @@ def write_journal_url(output_folder_path, input_folder_path):
 
     # google_metrics_h5m5.csv
     scieloh5m5_file_path = os.path.join(
-        scieloh5m5_path, "google_metrics_h5m5.csv")
+        scieloh5m5_path, "google_metrics_h5m5.to_append.csv")
 
     sorted_rows = sorted(get_rows(input_file_paths))
     content = "\n".join(sorted_rows) + "\n"
@@ -65,6 +65,8 @@ def write_journal_url(output_folder_path, input_folder_path):
     with open(journals_url_file_path, 'w') as outfile:
         outfile.write('issn,year,title,h5,m5,url\n')
         outfile.write(content)
+
+    return scieloh5m5_file_path, journals_url_file_path
 
 
 def main():
@@ -95,8 +97,9 @@ def main():
     except ValueError as e:
         print(e)
     else:
-        write_journal_url(args.output_folder_path, args.input_folder_path)
-        print(f"Created: {args.input_folder_path}")
+        outputs = write_journal_url(args.output_folder_path, args.input_folder_path)
+        outputs = '\n'.join(outputs)
+        print(f"Created: \n{outputs}")
 
 
 if __name__ == '__main__':
